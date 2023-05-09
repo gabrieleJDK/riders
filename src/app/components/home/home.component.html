@@ -1,0 +1,19 @@
+<!-- <nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
+  <a mat-tab-link *ngFor="let link of links"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive"> {{link.label}}
+  </a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+
+<mat-tab-group>
+  <mat-tab label="Accedi">
+    <app-login></app-login>
+  </mat-tab>
+  <mat-tab label="Registrazione">
+    <app-registration></app-registration>
+  </mat-tab>
+</mat-tab-group>
+
+

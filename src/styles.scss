@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
+  color: #f9c533!important;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: #f9c533!important;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: #000;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: #f9c533!important;
+  --mat-tab-header-active-ripple-color: #f9c533!important;
+  --mat-tab-header-inactive-ripple-color: #f9c533!important;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: #f9c533!important;
+  --mat-tab-header-active-hover-label-text-color: #f9c533!important;
+  --mat-tab-header-active-focus-indicator-color: #f9c533!important;
+  --mat-tab-header-active-hover-indicator-color: #f9c533!important;
+}
