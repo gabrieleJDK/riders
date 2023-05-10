@@ -24,7 +24,13 @@ export class LoginComponent {
           this.user = res;
           if(res) {
             this.authService.saveStorage(res);
-            this.router.navigate(['home']);
+            if(res.rider_Id != 0){
+              this.router.navigate(['home-rider']);
+            }
+
+            if(res.restaurantOwner_Id != 0){
+              this.router.navigate(['home-owner']);
+            }
           } else {
             this.loggingError = 'Username o password errati.';
           }

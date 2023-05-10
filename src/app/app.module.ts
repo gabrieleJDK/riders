@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeRiderComponent } from './components/home-rider/home-rider.component';
+import { HomeOwnerComponent } from './components/home-owner/home-owner.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    HomeRiderComponent,
+    HomeOwnerComponent,
   ],
   imports: [
     BrowserModule,

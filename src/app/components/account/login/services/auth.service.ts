@@ -25,6 +25,9 @@ export class AuthService {
       name: res.name,
       username: res.username,
       password: res.password,
+      token: res.token,
+      rider_Id: res.rider_Id,
+      restaurantOwner_Id: res.rider_Id,
     }
     sessionStorage.setItem('user', JSON.stringify(user));
   }
