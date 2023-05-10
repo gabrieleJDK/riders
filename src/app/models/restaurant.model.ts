@@ -1,5 +1,5 @@
 export interface Restaurant {
-  _id: string;
+  restaurant_Id: number | string;
   cap: string,
   city: string,
   lat: 0,

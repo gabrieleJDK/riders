@@ -13,6 +13,7 @@ import { RegistrationComponent } from './components/account/registration/registr
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './shared/header/header.component';
     RegistrationComponent,
     HomeComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

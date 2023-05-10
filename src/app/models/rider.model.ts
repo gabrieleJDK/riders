@@ -1,5 +1,5 @@
 export interface Rider {
-  _id: string;
+  rider_Id: number | string;
   firstName: string,
   lastName: string,
   age: number;

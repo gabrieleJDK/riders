@@ -3,6 +3,13 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+footer{
+  margin-top: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
   color: #f9c533!important;
 }
