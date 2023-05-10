@@ -27,7 +27,7 @@ export class RegistrationComponent {
     this.accountService.registration(user.username, user.password, user.email).subscribe({
       next: (res) => {
         console.log('Utente inserito: ', res);
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
       },
       error: (err) => {
         console.log(err);
