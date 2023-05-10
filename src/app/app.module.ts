@@ -12,6 +12,7 @@ import { LoginComponent } from './components/account/login/login.component';
 import { RegistrationComponent } from './components/account/registration/registration.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
