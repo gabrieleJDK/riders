@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../services/account.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registration',
@@ -19,7 +20,8 @@ export class RegistrationComponent {
 
   constructor (
     private router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private modalService: NgbModal,
   ) {}
 
   onSubmit() {
@@ -27,12 +29,34 @@ export class RegistrationComponent {
     this.accountService.registration(user.username, user.password, user.email).subscribe({
       next: (res) => {
         console.log('Utente inserito: ', res);
+        //this.open("modalChoice");
         // this.router.navigate(['/login']);
       },
       error: (err) => {
         console.log(err);
       }
     })
+  }
+
+  open(content: any, titolo?: string){
+    let title = titolo;
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal choice', size: 'md', centered: true}).result.then((res)=>{
+      //azione
+    }).catch((res)=>{
+      console.log('nessuna azione');
+    });
+
+  }
+
+  goToRider(){
+    this.modalService.dismissAll();
+    this.router.navigate(['registration-rider']);
+  }
+
+  goToOwner(){
+    this.modalService.dismissAll();
+    this.router.navigate(['registration-owner']);
   }
 
 }
