@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../services/account.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-registration',
@@ -10,6 +11,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
+  @ViewChild('modalChoice') content: any;
 
   registrationForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$/)]),
@@ -29,7 +32,7 @@ export class RegistrationComponent {
     this.accountService.registration(user.username, user.password, user.email).subscribe({
       next: (res) => {
         console.log('Utente inserito: ', res);
-        //this.open("modalChoice");
+        this.content.show();
         // this.router.navigate(['/login']);
       },
       error: (err) => {
@@ -42,7 +45,7 @@ export class RegistrationComponent {
     let title = titolo;
 
     this.modalService.open(content, {ariaLabelledBy: 'modal choice', size: 'md', centered: true}).result.then((res)=>{
-      //azione
+      this.onSubmit();
     }).catch((res)=>{
       console.log('nessuna azione');
     });
