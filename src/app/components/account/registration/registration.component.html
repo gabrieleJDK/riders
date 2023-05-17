@@ -28,3 +28,21 @@
     </div>
   </div>
 </div>
+
+
+<ng-template id="modalChoice" #modalChoice let-modal>
+  <div class="modal-header">
+    <div class="icona">
+    </div>
+    <h1>Riders</h1>
+  </div>
+  <div class="modal-body">
+    <h3>Continua come:</h3>
+    <div class="btn-container">
+      <button type="button" class="btn" (click)="goToRider()">Rider</button>
+      <button type="button"  class="btn" (click)="goToOwner()">Ristoratore</button>
+    </div>
+  </div>
+  <div class="modal-footer"></div>
+
+</ng-template>

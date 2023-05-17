@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../services/account.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-registration',
@@ -9,6 +11,8 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
+  @ViewChild('modalChoice') content: any;
 
   registrationForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$/)]),
@@ -19,7 +23,8 @@ export class RegistrationComponent {
 
   constructor (
     private router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private modalService: NgbModal,
   ) {}
 
   onSubmit() {
@@ -27,12 +32,34 @@ export class RegistrationComponent {
     this.accountService.registration(user.username, user.password, user.email).subscribe({
       next: (res) => {
         console.log('Utente inserito: ', res);
+        this.content.show();
         // this.router.navigate(['/login']);
       },
       error: (err) => {
         console.log(err);
       }
     })
+  }
+
+  open(content: any, titolo?: string){
+    let title = titolo;
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal choice', size: 'md', centered: true}).result.then((res)=>{
+      this.onSubmit();
+    }).catch((res)=>{
+      console.log('nessuna azione');
+    });
+
+  }
+
+  goToRider(){
+    this.modalService.dismissAll();
+    this.router.navigate(['registration-rider']);
+  }
+
+  goToOwner(){
+    this.modalService.dismissAll();
+    this.router.navigate(['registration-owner']);
   }
 
 }

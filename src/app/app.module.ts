@@ -17,6 +17,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeRiderComponent } from './components/home-rider/home-rider.component';
 import { HomeOwnerComponent } from './components/home-owner/home-owner.component';
+import { RegistrationRiderComponent } from './components/registration-rider/registration-rider.component';
+import { RegistrationOwnerComponent } from './components/registration-owner/registration-owner.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { HomeOwnerComponent } from './components/home-owner/home-owner.component
     FooterComponent,
     HomeRiderComponent,
     HomeOwnerComponent,
+    RegistrationRiderComponent,
+    RegistrationOwnerComponent,
   ],
   imports: [
     BrowserModule,
