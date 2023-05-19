@@ -17,7 +17,7 @@ export class RegistrationComponent {
     email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$/)]),
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/)]),
-    type: new FormControl('', Validators.required),
+    role: new FormControl('', Validators.required),
     terms: new FormControl('', Validators.requiredTrue)
   })
 
@@ -29,9 +29,10 @@ export class RegistrationComponent {
 
   onSubmit() {
     const user = this.registrationForm.value;
-    this.accountService.registration(user.username, user.password, user.email, user.type).subscribe({
+    this.accountService.registration(user.username, user.password, user.email, user.role).subscribe({
       next: (res) => {
         console.log('Utente inserito: ', res);
+
 
         // this.router.navigate(['/login']);
       },

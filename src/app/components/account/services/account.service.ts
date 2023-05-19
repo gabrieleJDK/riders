@@ -14,8 +14,8 @@ export class AccountService {
     private http: HttpClient,
   ) {}
 
-  registration(username: string, password: string, email: string, type: string) {
-    const user = { username: username, password: password, email: email, type: type};
+  registration(username: string, password: string, email: string, role: string) {
+    const user = { username: username, password: password, email: email, role: role};
     return this.http.post(`${this.apiBaseUrl}/registration`, user);
   }
 
